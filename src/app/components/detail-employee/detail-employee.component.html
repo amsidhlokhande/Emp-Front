@@ -1,0 +1,33 @@
+<h2>Employee Details</h2>
+
+<hr />
+<div *ngIf="employee | async as emp">
+    <div>
+        <label><b>Employee ID: </b></label> {{emp.empId}}
+    </div>
+
+    <div>
+        <label><b>Employee Name: </b></label> {{emp.empName}}
+    </div>
+
+    <div>
+        <label><b>Mobile Number: </b></label> {{emp.mobileNumber}}
+    </div>
+
+    <div>
+        <label><b>Email ID: </b></label> {{emp.emailId}}
+    </div>
+
+    <div>
+        <label><b>Company Name: </b></label> {{emp.companyName}}
+    </div>
+
+
+    <div>
+        <label><b>Address: </b></label> {{emp.address}}
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
