@@ -22,6 +22,7 @@ export class ListEmployeeComponent implements OnInit {
   public loadEmployees() {
     console.log("Loading employees in ListEmployeeComponent");
     this.employees = this.employeeService.getAllEmployees();
+    this.router.navigate( [ '/employees' ] );
   }
 
   //detele Employee

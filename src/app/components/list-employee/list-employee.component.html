@@ -2,8 +2,8 @@
     <div class="panel-heading">
         <h2>Employee List</h2>
     </div>
-    <div class="panel-body">
-        <table class="table table-striped">
+    <div class="panel-body table-responsive text-nowrap">
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <td>EmpId</td>
@@ -24,7 +24,7 @@
                     <td>{{employee.companyName}}</td>
                     <td>{{employee.address}}</td>
                     <td>
-                        <button type="button" class="btn btn-danger" (click)="detailEmployee(employee.empId)">Delete</button> &nbsp;
+                        <button type="button" class="btn btn-danger" (click)="deleteEmployee(employee.empId)">Delete</button> &nbsp;
                         <button type="button" class="btn btn-info" style="margin-left: 10px" (click)="updateEmployee(employee.empId)">Update</button> &nbsp;
                         <button type="button" class="btn btn-info" style="margin-left: 10px" (click)="detailEmployee(employee.empId)">Details</button>
                     </td>
