@@ -16,15 +16,15 @@ export class CreateEmployeeComponent implements OnInit {
   formSubmitted: boolean = false;
   message: string;
 
-  constructor(private employeeService: EmployeeService, private formBuilder: FormBuilder, private router: Router) { 
+  constructor(private employeeService: EmployeeService, private formBuilder: FormBuilder, private router: Router) {
     console.log('Creating employeeForm!!!!');
     this.employeeForm = this.formBuilder.group({
-      empId: new FormControl("", [Validators.required]),
-      empName: new FormControl("", Validators.compose([Validators.required, Validators.minLength(3)])),
-      companyName: new FormControl("", Validators.compose([Validators.required, Validators.minLength(3)])),
-      mobileNumber: new FormControl(""),
-      emailId: new FormControl("", Validators.compose([Validators.required, Validators.email])),
-      address: new FormControl("")
+      empId: new FormControl('', [Validators.required]),
+      empName: new FormControl('', Validators.compose([Validators.required, Validators.minLength(3)])),
+      companyName: new FormControl('', Validators.compose([Validators.required, Validators.minLength(3)])),
+      mobileNumber: new FormControl(''),
+      emailId: new FormControl('', Validators.compose([Validators.required, Validators.email])),
+      address: new FormControl('')
     });
   }
 
@@ -43,7 +43,7 @@ export class CreateEmployeeComponent implements OnInit {
         this.loadEmployee();
       }, error => console.log( error )
     );
-    
+
   }
 
 

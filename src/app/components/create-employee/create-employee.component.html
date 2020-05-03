@@ -32,7 +32,7 @@
             <input type="text" class="form-control" formControlName="address" name="address" placeholder="Address">
         </div>
 
-        <button type="submit" class="btn btn-success">Submit</button> &nbsp; &nbsp;
+        <button type="submit" [disabled]="employeeForm.invalid"  class="btn btn-success">Submit</button> &nbsp; &nbsp;
         <button type="button" class="btn btn-info" (click)="resetForm()">Reset</button>
     </form>
 </div>

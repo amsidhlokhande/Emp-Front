@@ -10,6 +10,7 @@ import { DetailEmployeeComponent } from './components/detail-employee/detail-emp
 import { ListEmployeeComponent } from './components/list-employee/list-employee.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { EmployeeService } from './services/employee.service';
+import { SearchFilterPipe } from './components/list-employee/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EmployeeService } from './services/employee.service';
     CreateEmployeeComponent,
     DetailEmployeeComponent,
     ListEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

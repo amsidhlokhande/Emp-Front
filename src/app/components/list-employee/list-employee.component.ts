@@ -12,6 +12,7 @@ import { Employee } from 'src/app/models/employee';
 export class ListEmployeeComponent implements OnInit {
 
   employees: Observable<Employee[]>;
+  searchText: string;
 
   constructor(private employeeService: EmployeeService, private router: Router) { }
 
