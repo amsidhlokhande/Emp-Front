@@ -2,38 +2,52 @@
 <div [hidden]="formSubmitted" style="width: 400px;">
     <form [formGroup]="employeeForm" (ngSubmit)="submitEmployee()">
 
-        <div class="form-group">
-            <label for="empId">Employee ID</label>
-            <input type="text" class="form-control" formControlName="empId" name="empId" placeholder="Employee ID">
+      <div class="form-group">
+        <label for="empName">Employee Name</label>
+        <input [class.is-invalid]="empName.invalid && empName.touched" type="text" required id="empName"
+               class="form-control" formControlName="empName" name="empName" placeholder="Employee Name">
+        <div *ngIf="empName.invalid && empName.touched">
+          <small class="text-danger" *ngIf="empName.errors?.required">Employee name is required</small>
+          <small class="text-danger" *ngIf="empName.errors?.minlength">Employee name must be more than 3
+            character</small>
         </div>
+      </div>
 
-        <div class="form-group">
-            <label for="empName">Employee Name</label>
-            <input type="text" class="form-control" formControlName="empName" name="empName" placeholder="Employee Name">
+      <div class="form-group">
+        <label for="mobileNumber">Mobile Number</label>
+        <input type="text" id="mobileNumber" class="form-control" formControlName="mobileNumber" name="mobileNumber"
+               placeholder="Mobile Number">
+      </div>
+
+      <div class="form-group">
+        <label for="emailId">Email ID</label>
+        <input [class.is-invalid]="emailId.invalid && emailId.touched" type="email" required id="emailId"
+               class="form-control" formControlName="emailId" name="emailId" placeholder="Email Id">
+        <div *ngIf="emailId.invalid && emailId.touched">
+          <small class="text-danger" *ngIf="emailId.errors">Email is required/invalid</small>
         </div>
+      </div>
 
-        <div class="form-group">
-            <label for="mobileNumber">Mobile Number</label>
-            <input type="text" class="form-control" formControlName="mobileNumber" name="mobileNumber" placeholder="Mobile Number">
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input [class.is-invalid]="companyName.invalid && companyName.touched" type="text" required id="companyName"
+               class="form-control" formControlName="companyName" name="companyName"
+               placeholder="Company Name">
+        <div *ngIf="companyName.invalid && companyName.touched">
+          <small class="text-danger" *ngIf="companyName.errors?.required">Company name is required</small>
+          <small class="text-danger" *ngIf="companyName.errors?.minlength">Company name must be more than 3
+            character</small>
         </div>
+      </div>
 
-        <div class="form-group">
-            <label for="emailId">Email ID</label>
-            <input type="text" class="form-control" formControlName="emailId" name="emailId" placeholder="Email Id">
-        </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" class="form-control" formControlName="address" name="address"
+               placeholder="Address">
+      </div>
 
-        <div class="form-group">
-            <label for="companyName">Company Name</label>
-            <input type="text" class="form-control" formControlName="companyName" name="companyName" placeholder="Company Name">
-        </div>
-
-        <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" formControlName="address" name="address" placeholder="Address">
-        </div>
-
-        <button type="submit" [disabled]="employeeForm.invalid"  class="btn btn-success">Submit</button> &nbsp; &nbsp;
-        <button type="button" class="btn btn-info" (click)="resetForm()">Reset</button>
+      <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-success">Submit</button> &nbsp; &nbsp;
+      <button type="button" class="btn btn-info" (click)="resetForm()">Reset</button>
     </form>
 </div>
 

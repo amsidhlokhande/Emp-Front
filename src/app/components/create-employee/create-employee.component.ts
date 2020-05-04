@@ -19,7 +19,7 @@ export class CreateEmployeeComponent implements OnInit {
   constructor(private employeeService: EmployeeService, private formBuilder: FormBuilder, private router: Router) {
     console.log('Creating employeeForm!!!!');
     this.employeeForm = this.formBuilder.group({
-      empId: new FormControl('', [Validators.required]),
+      empId: new FormControl(''),
       empName: new FormControl('', Validators.compose([Validators.required, Validators.minLength(3)])),
       companyName: new FormControl('', Validators.compose([Validators.required, Validators.minLength(3)])),
       mobileNumber: new FormControl(''),
@@ -61,6 +61,18 @@ export class CreateEmployeeComponent implements OnInit {
     this.formSubmitted = false;
     this.message = null;
     this.loadEmployee();
+  }
+
+  get empName() {
+    return this.employeeForm.get('empName');
+  }
+
+  get companyName() {
+    return this.employeeForm.get('companyName');
+  }
+
+   get emailId() {
+    return this.employeeForm.get('emailId');
   }
 
 }

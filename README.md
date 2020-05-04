@@ -1,3 +1,13 @@
+<h1>Use following command to run the this angular project in docker container</h1>
+<h3>
+docker build . -t emp-front <br>
+docker run --name emp-front -p 8080:80 -d emp-front
+</h3>
+
+<h1>Hit the following link</h1>
+<a href="http://localhost:8080/">http://localhost:8080/</a>
+
+
 # EmpFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
