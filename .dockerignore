@@ -3,4 +3,5 @@ node_modules
 dist
 *.iml
 .git
+.scannerwork
 
